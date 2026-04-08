@@ -1,0 +1,67 @@
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Te Amo Genesis</title>
+
+<style>
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 40%;
+  color: white;
+  font-size: 50px;
+}
+
+/* Corazones */
+.heart {
+  position: absolute;
+  top: -10px;
+  color: white;
+  font-size: 20px;
+  animation: caer linear infinite;
+}
+
+@keyframes caer {
+  to {
+    transform: translateY(100vh);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Te amo Genesis 🤍</h1>
+
+<script>
+function crearCorazon() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "🤍";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(crearCorazon, 300);
+</script>
+
+</body>
+</html>
